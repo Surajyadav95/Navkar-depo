@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{2F1566E8-D403-47DB-AD08-6FBB30C7B1DD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HRRecruitment</RootNamespace>
+    <AssemblyName>HRRecruitment</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HRRecruitment.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HRRecruitment.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\HRRecruitment.dll" />
+    <Content Include="bin\HRRecruitment.pdb" />
+    <Content Include="bin\HRRecruitment.xml" />
+    <Content Include="Common\CandidateList.aspx" />
+    <Content Include="Common\NewCandidate.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\demo\gamma-gallery.css" />
+    <Content Include="css\demo\jasmine.css" />
+    <Content Include="css\demo\jquery-steps.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="forms-wizard.html" />
+    <Content Include="Global.asax" />
+    <Content Include="img\av1.png" />
+    <Content Include="img\av2.png" />
+    <Content Include="img\av3.png" />
+    <Content Include="img\av4.png" />
+    <Content Include="img\av5.png" />
+    <Content Include="img\av6.png" />
+    <Content Include="img\av7.png" />
+    <Content Include="img\bg3.jpg" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\gamma\medium\gallery-1.png" />
+    <Content Include="img\gamma\medium\gallery-2.png" />
+    <Content Include="img\gamma\medium\gallery-3.png" />
+    <Content Include="img\gamma\medium\gallery-4.png" />
+    <Content Include="img\gamma\medium\gallery-5.png" />
+    <Content Include="img\gamma\medium\gallery-6.png" />
+    <Content Include="img\gamma\medium\gallery-7.png" />
+    <Content Include="img\gamma\medium\gallery-8.png" />
+    <Content Include="img\gamma\medium\gallery-9.png" />
+    <Content Include="img\photos\big-user-image-10.jpg" />
+    <Content Include="img\photos\big-user-image-11.jpg" />
+    <Content Include="img\photos\big-user-image-12.jpg" />
+    <Content Include="img\photos\big-user-image-2.jpg" />
+    <Content Include="img\photos\big-user-image-3.jpg" />
+    <Content Include="img\photos\big-user-image-4.jpg" />
+    <Content Include="img\photos\big-user-image-5.jpg" />
+    <Content Include="img\photos\big-user-image-6.jpg" />
+    <Content Include="img\photos\big-user-image-7.jpg" />
+    <Content Include="img\photos\big-user-image-8.jpg" />
+    <Content Include="img\photos\big-user-image-9.jpg" />
+    <Content Include="img\photos\big-user-image.jpg" />
+    <Content Include="img\photos\profile-pic-1.png" />
+    <Content Include="img\thumbs\6.jpg" />
+    <Content Include="img\thumbs\img1.jpg" />
+    <Content Include="img\thumbs\img2.jpg" />
+    <Content Include="img\thumbs\img3.jpg" />
+    <Content Include="img\thumbs\img4.png" />
+    <Content Include="img\user.png" />
+    <Content Include="Summary\BCYPendency.aspx" />
+    <Content Include="Summary\ImportMovement.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\demo\charts-flot.js" />
+    <Content Include="js\demo\charts-morris.js" />
+    <Content Include="js\demo\dashboard-v2.js" />
+    <Content Include="js\demo\form-component.js" />
+    <Content Include="js\demo\form-layout.js" />
+    <Content Include="js\demo\form-switchery.js" />
+    <Content Include="js\demo\form-validation.js" />
+    <Content Include="js\demo\form-wizard.js" />
+    <Content Include="js\demo\fullcalendar.js" />
+    <Content Include="js\demo\index.js" />
+    <Content Include="js\demo\jasmine.html" />
+    <Content Include="js\demo\mail-compose.js" />
+    <Content Include="js\demo\maps-vectormap.js" />
+    <Content Include="js\demo\misc-gmaps.js" />
+    <Content Include="js\demo\pages-gallery.js" />
+    <Content Include="js\demo\pages-register.js" />
+    <Content Include="js\demo\tables-datatables.js" />
+    <Content Include="js\demo\tables-footable.js" />
+    <Content Include="js\demo\ui-animation.js" />
+    <Content Include="js\demo\ui-dragdrop.js" />
+    <Content Include="js\demo\ui-nested-lists.js" />
+    <Content Include="js\demo\ui-panels.js" />
+    <Content Include="js\demo\ui-typography.js" />
+    <Content Include="js\demo\widgets.js" />
+    <Content Include="js\demo\wizard.js" />
+    <Content Include="js\demo\x-editable.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery-2.1.1.min.js" />
+    <Content Include="js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\modernizr.custom.js" />
+    <Content Include="js\moment.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="plugins\animate-css\animate.min.css" />
+    <Content Include="plugins\bootstrap-datepicker\bootstrap-datepicker.css" />
+    <Content Include="plugins\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="plugins\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="plugins\bootstrap-tagsinput\bootstrap-tagsinput.min.js" />
+    <Content Include="plugins\bootstrap-timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="plugins\bootstrap-timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="plugins\bootstrap-validator\bootstrapValidator.min.css" />
+    <Content Include="plugins\bootstrap-validator\bootstrapValidator.min.js" />
+    <Content Include="plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="plugins\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="plugins\bootstrap3-editable\img\clear.png" />
+    <Content Include="plugins\bootstrap3-editable\img\loading.gif" />
+    <Content Include="plugins\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="plugins\chosen\chosen-sprite%402x.html" />
+    <Content Include="plugins\chosen\chosen-sprite.html" />
+    <Content Include="plugins\chosen\chosen.jquery.min.js" />
+    <Content Include="plugins\chosen\chosen.min.css" />
+    <Content Include="plugins\datatables\extensions\Responsive\css\dataTables.responsive.css" />
+    <Content Include="plugins\datatables\extensions\Responsive\js\dataTables.responsive.min.js" />
+    <Content Include="plugins\datatables\media\css\dataTables.bootstrap.css" />
+    <Content Include="plugins\datatables\media\images\sort_asc.png" />
+    <Content Include="plugins\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="plugins\datatables\media\images\sort_both.png" />
+    <Content Include="plugins\datatables\media\images\sort_desc.png" />
+    <Content Include="plugins\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="plugins\datatables\media\js\dataTables.bootstrap.js" />
+    <Content Include="plugins\datatables\media\js\jquery.dataTables.js" />
+    <Content Include="plugins\dropzone\dropzone.css" />
+    <Content Include="plugins\dropzone\dropzone.min.js" />
+    <Content Include="plugins\easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="plugins\fast-click\fastclick.min.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.categories.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.min.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.orderBars.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.pie.min.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.resize.min.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.selection.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.spline.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.stack.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.time.js" />
+    <Content Include="plugins\flot-charts\jquery.flot.tooltip.min.js" />
+    <Content Include="plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome\fonts\fontawesome-webfonte0a5e0a5.svg" />
+    <Content Include="plugins\fooTable\css\fonts\footable.svg" />
+    <Content Include="plugins\fooTable\css\footable.core.css" />
+    <Content Include="plugins\fooTable\dist\footable.all.min.js" />
+    <Content Include="plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="plugins\fullcalendar\lib\jquery-ui.custom.min.js" />
+    <Content Include="plugins\fullcalendar\lib\moment.min.js" />
+    <Content Include="plugins\gamma-gallery\js\gamma.js" />
+    <Content Include="plugins\gamma-gallery\js\jquery.history.js" />
+    <Content Include="plugins\gamma-gallery\js\jquery.masonry.min.js" />
+    <Content Include="plugins\gamma-gallery\js\jquerypp.custom.js" />
+    <Content Include="plugins\gamma-gallery\js\js-url.min.js" />
+    <Content Include="plugins\gamma-gallery\js\modernizr.custom.70736.js" />
+    <Content Include="plugins\gmaps\gmaps.js" />
+    <Content Include="plugins\gmaps\gmaps.min.js" />
+    <Content Include="plugins\images\spritemap%402x.html" />
+    <Content Include="plugins\images\spritemap.html" />
+    <Content Include="plugins\img\sprite-skin-nice.html" />
+    <Content Include="plugins\ion-rangeslider\ion.rangeSlider.css" />
+    <Content Include="plugins\ion-rangeslider\ion.rangeSlider.min.js" />
+    <Content Include="plugins\ion-rangeslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="plugins\jquery-nestable\jquery.nestable.min.css" />
+    <Content Include="plugins\jquery-nestable\jquery.nestable.min.js" />
+    <Content Include="plugins\jquery-print\jQuery.print.js" />
+    <Content Include="plugins\jquery-ricksaw-chart\css\rickshaw.css" />
+    <Content Include="plugins\jquery-steps\jquery-steps.min.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-ar-mill.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-de-mill.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-north_america-mill.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-uk_countries-mill.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap.css" />
+    <Content Include="plugins\jvectormap\jquery-jvectormap.min.js" />
+    <Content Include="plugins\masked-input\bootstrap-inputmask.min.js" />
+    <Content Include="plugins\masked-input\jquery.maskedinput.min.js" />
+    <Content Include="plugins\metismenu\metismenu.min.js" />
+    <Content Include="plugins\moment-range\moment-range.js" />
+    <Content Include="plugins\moment\moment.min.js" />
+    <Content Include="plugins\morris-js\morris.min.css" />
+    <Content Include="plugins\morris-js\morris.min.js" />
+    <Content Include="plugins\morris-js\raphael-js\raphael.min.js" />
+    <Content Include="plugins\nanoscrollerjs\jquery.nanoscroller.min.js" />
+    <Content Include="plugins\noUiSlider\jquery.nouislider.all.min.js" />
+    <Content Include="plugins\noUiSlider\jquery.nouislider.min.css" />
+    <Content Include="plugins\noUiSlider\jquery.nouislider.pips.min.css" />
+    <Content Include="plugins\pace\pace.min.css" />
+    <Content Include="plugins\pace\pace.min.js" />
+    <Content Include="plugins\parsley\parsley.min.js" />
+    <Content Include="plugins\rickshaw-master\rickshaw.min.js" />
+    <Content Include="plugins\rickshaw-master\src\js\rickshaw.js" />
+    <Content Include="plugins\rickshaw-master\vendor\d3.v2.js" />
+    <Content Include="plugins\screenfull\screenfull.js" />
+    <Content Include="plugins\skycons\skycons.min.js" />
+    <Content Include="plugins\summernote\summernote.min.css" />
+    <Content Include="plugins\summernote\summernote.min.js" />
+    <Content Include="plugins\switchery\switchery.min.css" />
+    <Content Include="plugins\switchery\switchery.min.js" />
+    <Content Include="plugins\tag-it\jquery.tagit.css" />
+    <Content Include="plugins\tag-it\tag-it.min.js" />
+    <Content Include="plugins\weather-icons\font\weathericons-regular-webfont.svg" />
+    <Content Include="plugins\weather-icons\weather-icons.min.css" />
+    <Content Include="RA\Home.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CandidateList.aspx.designer.vb">
+      <DependentUpon>CandidateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CandidateList.aspx.vb">
+      <DependentUpon>CandidateList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Common\NewCandidate.aspx.designer.vb">
+      <DependentUpon>NewCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NewCandidate.aspx.vb">
+      <DependentUpon>NewCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DAL\AddEditDelete..vb" />
+    <Compile Include="DAL\clsEncryptDecrypt.vb" />
+    <Compile Include="DAL\dbAccess.vb" />
+    <Compile Include="DAL\dbOperations.vb" />
+    <Compile Include="DAL\SQLDatabaseOperations.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HR.Master.designer.vb">
+      <DependentUpon>HR.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HR\HR.Master.vb">
+      <DependentUpon>HR.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Summary\BCYPendency.aspx.designer.vb">
+      <DependentUpon>BCYPendency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\BCYPendency.aspx.vb">
+      <DependentUpon>BCYPendency.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Summary\ImportMovement.aspx.designer.vb">
+      <DependentUpon>ImportMovement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\ImportMovement.aspx.vb">
+      <DependentUpon>ImportMovement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RA\Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RA\Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="RA\RA.Master.designer.vb">
+      <DependentUpon>RA.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RA\RA.Master.vb">
+      <DependentUpon>RA.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="HR\HR.Master" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="plugins\font-awesome\fonts\fontawesome-webfontd41dd41d.eot" />
+    <None Include="plugins\font-awesome\fonts\fontawesome-webfonte0a5e0a5.eot" />
+    <None Include="plugins\font-awesome\fonts\fontawesome-webfonte0a5e0a5.ttf" />
+    <None Include="plugins\font-awesome\fonts\fontawesome-webfonte0a5e0a5.woff" />
+    <None Include="plugins\font-awesome\fonts\fontawesome-webfonte0a5e0a5.woff2" />
+    <None Include="plugins\fooTable\css\fonts\footable.eot" />
+    <None Include="plugins\fooTable\css\fonts\footable.ttf" />
+    <None Include="plugins\fooTable\css\fonts\footable.woff" />
+    <None Include="plugins\fooTable\css\fonts\footabled41dd41d.eot" />
+    <None Include="plugins\weather-icons\font\weathericons-regular-webfont.eot" />
+    <None Include="plugins\weather-icons\font\weathericons-regular-webfont.ttf" />
+    <None Include="plugins\weather-icons\font\weathericons-regular-webfont.woff" />
+    <None Include="plugins\weather-icons\font\weathericons-regular-webfontd41d.eot" />
+    <Content Include="RA\RA.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2513</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

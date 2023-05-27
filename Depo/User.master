@@ -1,0 +1,374 @@
+﻿<%@ Master Language="VB" CodeFile="User.master.vb" Inherits="RA_RA" %>
+
+<%--<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="~/RA/RA.Master.vb" Inherits="HRRecruitment.RA" %>--%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> Depo| tracker</title>
+<link rel="shortcut icon" href="../img/Phoenix-logo-Bird.png" type="image/png">   
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%-- <link href="../plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />--%>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
+<%-- <link href="../plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet">--%>
+<link href="../bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+<script src="../bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+</head>
+
+
+
+<%--<script type="text/javascript">
+$(document).ready(function () {
+$('#datepicker').datepicker();
+});
+</script>--%>
+</div>
+<!--STYLESHEET-->
+<!--=================================================-->
+<!--Roboto Slab Font [ OPTIONAL ] -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,700"
+
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--Bootstrap Stylesheet [ REQUIRED ]-->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--Jasmine Stylesheet [ REQUIRED ]-->
+<link href="../css/style.css" rel="stylesheet">
+<!--Font Awesome [ OPTIONAL ]-->
+<link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!--Switchery [ OPTIONAL ]-->
+<link href="../plugins/switchery/switchery.min.css" rel="stylesheet">
+<!--Bootstrap Select [ OPTIONAL ]-->
+<link href="../plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+<!--Bootstrap Validator [ OPTIONAL ]-->
+<link href="../plugins/bootstrap-validator/bootstrapValidator.min.css" rel="stylesheet">
+<!--ricksaw.js [ OPTIONAL ]-->
+<link href="../plugins/jquery-ricksaw-chart/css/rickshaw.css" rel="stylesheet">
+<!--jVector Map [ OPTIONAL ]-->
+<link href="../plugins/jvectormap/jquery-jvectormap.css" rel="stylesheet">
+<!--Demo [ DEMONSTRATION ]-->
+<link href="../css/demo/jquery-steps.min.css" rel="stylesheet">
+<!--Demo [ DEMONSTRATION ]-->
+<link href="../css/demo/jasmine.css" rel="stylesheet">
+<!--SCRIPT-->
+<!--=================================================-->
+
+<!--Page Load Progress Bar [ OPTIONAL ]-->
+<link href="../plugins/pace/pace.min.css" rel="stylesheet">
+ 
+</head> 
+
+<body>
+   
+<form id="form1" runat="server">
+<div id="container" class="effect mainnav-lg navbar-fixed mainnav-fixed">
+<!--NAVBAR-->
+<!--===================================================-->
+<header id="navbar">
+<div id="navbar-container" class="boxed">
+<!--Brand logo & name-->
+<!--================================-->
+
+
+<div class="navbar-header">
+<a href="../Depo/Home.aspx" class="navbar-brand">
+<i class="fa fa-cube brand-icon"></i>
+<div class="brand-title">
+tracker
+</div>
+</a>
+</div>
+
+<div class="navbar-content clearfix">
+<ul class="nav navbar-top-links pull-left">
+<!--Navigation toogle button-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<li class="tgl-menu-btn">
+<a class="mainnav-toggle" href="#"><i class="fa fa-navicon fa-lg"></i></a>
+</li>
+
+</ul>
+<div class="collapse navbar-collapse" id="primary-nav">
+<ul class="nav navbar-nav navbar-top-links pull-right">
+
+<!--User dropdown-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<li id="dropdown-user" class="dropdown">
+<a href="Login.aspx">
+<span class="pull-right" style="padding-top:10px;">
+<img class="img-circle img-user media-object" src="../img/user.png" alt="Profile Picture">
+</span>
+
+    
+<div class="username hidden-xs">
+<asp:Label runat="server" ID="LblUserName">
+<asp:Label ID="lblUserID" runat="server" Text="Label" Visible="false"></asp:Label></asp:Label>
+</div>
+    <div class="username hidden-xs">
+<asp:Label runat="server" ID="lblLocation" Text="Navkar III"></asp:Label>
+</div>
+<%--<div class="dropdown-menu dropdown-menu-right with-arrow">
+
+<ul class="head-list">
+
+<li>
+<a href="Login.aspx"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
+</li>
+</ul>
+</div>--%>
+</a>
+                                
+</li>
+                             
+</ul>
+</div>
+</div>
+                   
+</div>
+</header>
+           
+<div class="boxed">
+                
+<div id="content-container">
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+</div>
+               
+<nav id="mainnav-container">
+<div id="mainnav">
+                        
+<div id="mainnav-menu-wrap">
+<div class="nano">
+<div class="nano-content">
+<ul id="mainnav-menu" class="list-group">
+<!--Category name-->
+<%--  <li class="list-header">Navigation</li>
+<!--Menu list item-->
+<li>--%>
+<a href="../Depo/Home.aspx">
+<i class="fa fa-home"></i>
+<span class="menu-title">Home</span>
+<i class="arrow"></i>
+</a>
+    <asp:Repeater runat="server" ID="rptgroup" OnItemDataBound="rptgroup_ItemDataBound">
+        <ItemTemplate>
+            <li id="div_master" runat="server" style="overflow-y:no-display" >
+                <a style="cursor:pointer">
+<i class='<%#Eval("Icon")%> '></i>
+<span class="menu-title"><%#Eval("MenuDeptName")%> 
+</span>
+<i class="arrow"></i>
+</a>
+                <asp:HiddenField runat="server" ID="hfmenudeptid" Value='<%#Eval("menudeptid")%>' />
+                <asp:Repeater runat="server" ID="rptmaster">
+
+                    <ItemTemplate>
+                         <ul id="ul1" runat="server" class="collapse">
+<li><a href='<%#Eval("formname")%>' target='<%#Eval("Target")%>'><i class="fa fa-caret-right"></i><%#Eval("menudesc")%> </a></li>
+</ul>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </li>
+        </ItemTemplate>
+    </asp:Repeater> 
+<!--Submenu-->
+ 
+<!--===============EXPORT=================-->
+<%--<li id="div_receipt" runat="server">
+<a style="cursor:pointer">
+<i class="fa fa-clipboard"></i>
+<span class="menu-title">Receipt
+</span>
+<i class="arrow"></i>
+</a>
+                                             
+<!--Submenu-->
+ <ul id="ul_WiseModifGSTPart" runat="server" class="collapse">
+<li><a href="../Bond/WiseModifGSTPart.aspx"><i class="fa fa-caret-right"></i>Wise Modify GSTPart</a></li>
+</ul>
+<ul id="ul_BondGenerateReceipt" runat="server" class="collapse">
+<li><a href="../Bond/BondGenerateReceipt.aspx"><i class="fa fa-caret-right"></i>Bond Generate Receipt </a></li>
+</ul>
+ 
+</li> --%>
+<%--<li id="div_gatepass" runat="server">
+<a style="cursor:pointer">
+<i class="fa fa-th"></i>
+<span class="menu-title">Gate Pass
+</span>
+<i class="arrow"></i>
+</a>
+<ul id="ul_gatepass" runat="server" class="collapse">
+<li><a href="../Bond/BondGatePasss.aspx"><i class="fa fa-caret-right"></i> Gate Passs </a></li>
+</ul>
+<ul id="ul_gatepasssummary" runat="server" class="collapse">
+<li><a href="../Bond/GatePassSummary.aspx"><i class="fa fa-caret-right"></i>Gate Pass Summary</a></li>
+</ul>
+</li>--%>
+
+<%--<li id="div_tarffsettings" runat="server">
+<a style="cursor:pointer">
+<i class="fa fa-cogs"></i>
+<span class="menu-title">Tariff Settings
+</span>
+<i class="arrow"></i>
+</a>
+<ul id="ul_tariffmaster" runat="server" class="collapse">
+<li><a href="../Bond/TariffMaster.aspx"><i class="fa fa-caret-right"></i>Tariff Master </a></li>
+</ul>
+ 
+<ul id="ul_tariffsetting" runat="server" class="collapse">
+<li><a href="../Bond/BondTraiffSetting.aspx"><i class="fa fa-caret-right"></i>Tariff Setting</a></li>
+
+</ul>
+<ul id="ul_cancelbondtariff" runat="server" class="collapse">
+<li><a href="../Bond/CancelBondtariff.aspx"><i class="fa fa-caret-right"></i>Cancel Bond tariff </a></li>
+</ul>
+
+<ul id="ul_ApproveTariff" runat="server" class="collapse">
+<li><a href="../Bond/ApproveTariff.aspx"><i class="fa fa-caret-right"></i>Approve tariff </a></li>
+</ul>
+
+<ul id="ul_BondViewTariff" runat="server" class="collapse">
+<li><a href="../Bond/BondViewtariff.aspx"><i class="fa fa-caret-right"></i>Bond View Tariff</a></li>
+</ul>
+</li>--%>
+<!--===============Add-Ons=================-->
+
+              
+<%--<li id="Li1" runat="server">
+<a style="cursor:pointer">
+<i class="fa fa-search"></i>
+<span class="menu-title">Search
+</span>
+<i class="arrow"></i>
+</a>
+<ul id="ul_bondsearch" runat="server" class="collapse">
+<li><a href="../Bond/SearchBond.aspx"><i class="fa fa-caret-right"></i>Bond Search</a></li>
+
+</ul>
+
+    <ul id="ul2" runat="server" class="collapse">
+<li><a href="../Bond/SearchReceipt.aspx"><i class="fa fa-caret-right"></i>Search Receipt</a></li>
+
+</ul>
+
+      <ul id="ul3" runat="server" class="collapse">
+<li><a href="../Bond/BondViewAssessDetails.aspx"><i class="fa fa-caret-right"></i> Invoice Search  </a></li>
+
+</ul>
+
+</li>--%>
+                                         
+                                                                              
+<!--===============MIS REPORT=================-->
+
+</ul>
+
+</div>
+</div>
+</div>
+<!--================================-->
+<!--End menu-->
+</div>
+</nav>
+
+</div>
+
+<button id="scroll-top" class="btn">
+<i class="fa fa-chevron-up"></i>
+</button>
+<!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+<!--JAVASCRIPT-->
+<!--=================================================-->
+<script src="../plugins/switchery/switchery.min.js"></script>
+<!--Jquery Steps [ OPTIONAL ]-->
+<script src="../plugins/parsley/parsley.min.js"></script>
+<!--Jquery Steps [ OPTIONAL ]-->
+
+<script src="../plugins/jquery-steps/jquery-steps.min.js"></script>
+<!--Bootstrap Select [ OPTIONAL ]-->
+<script src="../plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<!--Bootstrap Wizard [ OPTIONAL ]-->
+<script src="../plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<!--Masked Input [ OPTIONAL ]-->
+
+
+<script src="../plugins/masked-input/bootstrap-inputmask.min.js"></script>
+<!--Bootstrap Validator [ OPTIONAL ]-->
+<script src="../plugins/bootstrap-validator/bootstrapValidator.min.js"></script>
+<!--Flot Chart [ OPTIONAL ]-->
+<script src="../plugins/flot-charts/jquery.flot.min.js"></script>
+<script src="../plugins/flot-charts/jquery.flot.resize.min.js"></script>
+<!--Flot Order Bars Chart [ OPTIONAL ]-->
+<script src="../plugins/flot-charts/jquery.flot.categories.js"></script>
+<!--jQuery Ricksaw Chart [ OPTIONAL ]-->
+<script src="../plugins/rickshaw-master/vendor/d3.v2.js"></script>
+<script src="../plugins/rickshaw-master/src/js/rickshaw.js"></script>
+<script src="../plugins/rickshaw-master/rickshaw.min.js"></script>
+<!--Easy Pie Chart [ OPTIONAL ]-->
+
+
+
+<script src="../plugins/easy-pie-chart/jquery.easypiechart.min.js"></script>
+<!--Fullscreen jQuery [ OPTIONAL ]-->
+<script src="../plugins/screenfull/screenfull.js"></script>
+<!--Form Wizard [ SAMPLE ]-->
+
+
+<script src="../js/demo/index.js"></script>
+<!--Form Wizard [ SAMPLE ]-->
+<script src="../js/demo/wizard.js"></script>
+<!--Form Wizard [ SAMPLE ]-->
+
+
+<script src="../js/demo/form-wizard.js"></script>
+
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../JavaScript001.js"></script>
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="../js/bootstrap.min.js"></script>
+<!--Fast Click [ OPTIONAL ]-->
+
+<script src="../plugins/fast-click/fastclick.min.js"></script>
+<!--Jasmine Admin [ RECOMMENDED ]-->
+<script src="../js/scripts.js"></script>
+<!--Jquery Nano Scroller js [ REQUIRED ]-->
+<script src="../plugins/nanoscrollerjs/jquery.nanoscroller.min.js"></script>
+<!--Metismenu js [ REQUIRED ]-->
+<script src="../plugins/metismenu/metismenu.min.js"></script>
+<!--Switchery [ OPTIONAL ]-->
+
+<script src="../plugins/bootstrap-timepicker/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="../plugins/bootstrap-datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+
+<div>
+</div>
+</form>
+
+<script type="text/javascript">
+function pop(url, w, h, T, L) {
+n = window.open(url, null, 'top=' + T + ',left=' + L + ',toolbar=0,location=0,directories=0,status=1,menubar=0,titlebar=0,scrollbars=1,resizable=0,width=' + w + ',height=' + h);
+if (n == null) {
+return true;
+}
+return false;
+}
+</script>
+     
+</body>
+</html>

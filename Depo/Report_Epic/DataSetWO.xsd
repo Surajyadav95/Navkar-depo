@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetWO" targetNamespace="http://tempuri.org/DataSetWO.xsd" xmlns:mstns="http://tempuri.org/DataSetWO.xsd" xmlns="http://tempuri.org/DataSetWO.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetWO" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_WOPrint">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WONO" type="xs:string" minOccurs="0" />
+              <xs:element name="WODate" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerLocation" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="Site" type="xs:string" minOccurs="0" />
+              <xs:element name="CHAName" type="xs:string" minOccurs="0" />
+              <xs:element name="ShippingBillNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ShipDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Remarks" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WOCharges">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountName" type="xs:string" minOccurs="0" />
+              <xs:element name="Remark" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Container">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Container_Num" type="xs:string" minOccurs="0" />
+              <xs:element name="Container_Size" type="xs:string" minOccurs="0" />
+              <xs:element name="type" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TaxInvoice">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountName" type="xs:string" minOccurs="0" />
+              <xs:element name="HSNCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty" type="xs:string" minOccurs="0" />
+              <xs:element name="WORate" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="CGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="CGST" type="xs:string" minOccurs="0" />
+              <xs:element name="SGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="SGST" type="xs:string" minOccurs="0" />
+              <xs:element name="IGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="IGST" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WOShipping">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShippingNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ShippingDate" type="xs:string" minOccurs="0" />
+              <xs:element name="BOENo" type="xs:string" minOccurs="0" />
+              <xs:element name="BoEDate" type="xs:string" minOccurs="0" />
+              <xs:element name="WONo" type="xs:string" minOccurs="0" />
+              <xs:element name="jobno" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WOContainer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WO_No" type="xs:string" minOccurs="0" />
+              <xs:element name="container_num" type="xs:string" minOccurs="0" />
+              <xs:element name="Container_Size" type="xs:string" minOccurs="0" />
+              <xs:element name="type" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="References">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReferenceName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShippingBill">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BillDate" type="xs:string" minOccurs="0" />
+              <xs:element name="BillNo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TI_References">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="wono" type="xs:string" minOccurs="0" />
+              <xs:element name="Reference" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OutStanding">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TaxNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TIDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Grand_Total" type="xs:string" minOccurs="0" />
+              <xs:element name="PaidAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="BalAmt" type="xs:string" minOccurs="0" />
+              <xs:element name="WONO" type="xs:string" minOccurs="0" />
+              <xs:element name="ShippingBOE" type="xs:string" minOccurs="0" />
+              <xs:element name="ShippingBOEDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Cheque">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ChequeNo" type="xs:string" minOccurs="0" />
+              <xs:element name="ChequeDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Bank" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AutoMail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Site" type="xs:string" minOccurs="0" />
+              <xs:element name="LastDayTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="MTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="YTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="LastDayPTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="MPTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="YPTotal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Site" type="xs:string" minOccurs="0" />
+              <xs:element name="TaxNO" type="xs:string" minOccurs="0" />
+              <xs:element name="TAX_Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Customer_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PaymentAutomail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EntryNo" type="xs:string" minOccurs="0" />
+              <xs:element name="RecvdDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Customer_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="RecvdAmt" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TPPrint1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SrNo" type="xs:string" minOccurs="0" />
+              <xs:element name="HSNCode" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="CGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="CGST" type="xs:string" minOccurs="0" />
+              <xs:element name="SGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="SGST" type="xs:string" minOccurs="0" />
+              <xs:element name="IGSTper" type="xs:string" minOccurs="0" />
+              <xs:element name="IGST" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

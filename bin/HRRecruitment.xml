@@ -1,0 +1,235 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HRRecruitment
+</name>
+</assembly>
+<members>
+<member name="F:HRRecruitment.BCYPendency.txtFromDate">
+	<summary>
+txtFromDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.BCYPendency.txtToDate">
+	<summary>
+txtToDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.BCYPendency.Button1">
+	<summary>
+Button1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.BCYPendency.lblTotRecords">
+	<summary>
+lblTotRecords control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.BCYPendency.grdCustomer">
+	<summary>
+grdCustomer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.ImportMovement.lblTotRecords">
+	<summary>
+lblTotRecords control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.ImportMovement.grdCustomer">
+	<summary>
+grdCustomer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:HRRecruitment.My.MyWebExtension.Application">
+	<summary>
+ Returns information about the current application.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="P:HRRecruitment.My.MyWebExtension.WebServices">
+	<summary>
+ Provides access to WebServices added to this project.
+ </summary>
+</member><member name="T:HRRecruitment.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:HRRecruitment.RA.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.RA.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.RA.LblUserName">
+	<summary>
+LblUserName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.RA.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="M:HRRecruitment.MyConnection.dbOperations.closeDB">
+ close database and perform cleanup   
+
+</member><member name="M:HRRecruitment.MyConnection.dbOperations.IsRecordExists(System.String,System.Data.SqlClient.SqlParameter[])">
+	<summary>
+ Checks for Record exists or not
+ Created By: Jojo George
+ </summary>
+</member><member name="F:HRRecruitment.HR.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.HR.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.HR.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.registrationForm">
+	<summary>
+registrationForm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.panel">
+	<summary>
+panel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.username">
+	<summary>
+username control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.password">
+	<summary>
+password control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.Login.BtnSubmit">
+	<summary>
+BtnSubmit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:HRRecruitment.MyConnection.dbAccess.connCount">
+ Global connection object
+
+</member><member name="F:HRRecruitment.MyConnection.dbAccess.conn">
+ Global Transaction object
+
+</member><member name="F:HRRecruitment.MyConnection.dbAccess.trans">
+ Global command object
+
+</member><member name="F:HRRecruitment.MyConnection.dbAccess.cmd">
+ Private variable - Connection string
+
+</member><member name="M:HRRecruitment.MyConnection.dbAccess.initDB">
+/Initialise and Open the connection     
+
+</member><member name="M:HRRecruitment.MyConnection.dbAccess.closeDB">
+ close database and perform cleanup   
+
+</member><member name="M:HRRecruitment.MyConnection.dbAccess.IsRecordExists(System.String,System.Data.SqlClient.SqlParameter[])">
+	<summary>
+ Checks for Record exists or not
+ Created By: Jojo George
+ </summary>
+</member>
+</members>
+</doc>
