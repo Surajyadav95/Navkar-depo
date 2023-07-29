@@ -155,17 +155,19 @@ Partial Class Summary_BCYMovement
                 End If
 
             Next
-
-            If Len(Trim(txtContainer.Text)) <> "11" Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please enter valid container No');", True)
-                txtContainer.Text = ""
-                lblEntryID.Text = ""
-                txtType.Text = ""
-                TxtSize.Text = ""
-                lblisocode.Text = ""
-                txtContainer.Focus()
-                Exit Sub
+            If (lbllineid.Text <> "371") Then
+                If Len(Trim(txtContainer.Text)) <> "11" Then
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please enter valid container No');", True)
+                    txtContainer.Text = ""
+                    lblEntryID.Text = ""
+                    txtType.Text = ""
+                    TxtSize.Text = ""
+                    lblisocode.Text = ""
+                    txtContainer.Focus()
+                    Exit Sub
+                End If
             End If
+            
             If Trim(TxtSize.Text) = "" Then
                 ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please enter container No again');", True)
                 txtContainer.Text = ""

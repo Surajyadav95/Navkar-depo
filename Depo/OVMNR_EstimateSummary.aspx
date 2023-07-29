@@ -59,7 +59,7 @@ CodeFile="OVMNR_EstimateSummary.aspx.vb" Inherits="Summary_BCYMovement" %>
 
 </div>
 
-    <div class="col-md-3 col-xs-12" id="divContainerNo" style="display:none" runat="server" >
+    <div class="col-md-2 col-xs-6" id="divContainerNo" style="display:none" runat="server" >
 <div class="form-group text-label">
 <b  >Container No</b>
 <asp:TextBox ID="TxtContainerNo" Style="text-transform: uppercase;border-radius:4px" runat="server" class="form-control text-label" >                                              
@@ -92,6 +92,14 @@ CodeFile="OVMNR_EstimateSummary.aspx.vb" Inherits="Summary_BCYMovement" %>
 
 </div>  --%>  
 
+         <div class="col-md-1 col-xs-3" id="div1"  runat="server" >
+<div class="form-group text-label">
+<b  >Count</b>
+<asp:TextBox ID="txtcount"  ReadOnly ="true"  Style="text-transform: uppercase;border-radius:4px" runat="server" class="form-control text-label" >                                              
+</asp:TextBox>
+</div>
+
+</div>
     
     <div class="col-md-3 col-xs-12"  >
 <div class="form-group pull-right" style=" padding-top:20px">
@@ -114,12 +122,21 @@ Text="Show"     />
 AutoGenerateColumns="false" EmptyDataText="No records found!" ShowHeaderWhenEmpty="true" >
 <pagerstyle backcolor="white" ForeColor="blue" Font-Underline="false" height="30px" verticalalign="Bottom" horizontalalign="center"/> 
 <Columns>
-     <asp:TemplateField HeaderText="Select" HeaderStyle-CssClass="center-header">
+ <asp:TemplateField>
+    <HeaderTemplate>
+      <asp:CheckBox ID="checkAll" runat="server" AutoPostBack ="true"   OnCheckedChanged ="chkright" onclick = "checkAll(this);" />
+    </HeaderTemplate>
 <ItemTemplate>
-<asp:CheckBox ID="chkright" Text=""  runat="server"/>  <%--OnCheckedChanged="chkright_OnCheckedChanged"--%>
+<asp:CheckBox ID="chkright" Text="" AutoPostBack ="true"   OnCheckedChanged ="chkright" 
+
+     onclick = "Check_Click(this)" runat="server" />
 </ItemTemplate>
   <ItemStyle Width="20px" HorizontalAlign="Center" />                                    
 </asp:TemplateField>
+
+
+
+   
         <asp:TemplateField HeaderText="Container No" HeaderStyle-CssClass="header-center">
         <ItemTemplate>
             <asp:Label runat="server" ID="lblContainerNo" Text='<%#Eval("Container No")%>'></asp:Label>
@@ -238,33 +255,125 @@ AutoGenerateColumns="false" EmptyDataText="No records found!" ShowHeaderWhenEmpt
 </div>
          
 </div>
-<%-- <script type="text/javascript">
-function checkRadioBtn(id) {
-var gv = document.getElementById('<%=grdcontainer.ClientID%>');
 
-for (var i = 1; i < gv.rows.length; i++) {
-var radioBtn = gv.rows[i].cells[0].getElementsByTagName("input");
+    
+<script type = "text/javascript">
 
-// Check if the id not same
-if (radioBtn[0].id != id.id) {
-radioBtn[0].checked = false;
-}
-}
-}
-</script>--%>
-<%--  <script type="text/javascript">
- 
-function BondExPrint() {
-            
-var NOCNo1= document.getElementById('<%= txtNOCNo.ClientID%>').value;
-             
-var url = "../Report_Bond/BondEx_logo_print.aspx?NOCNo=" + NOCNo1;
-//alert("hi")
-                
-window.open(url);
+    function checkAll(objRef) {
 
-}
+        var GridView = objRef.parentNode.parentNode.parentNode;
+
+        var inputList = GridView.getElementsByTagName("input");
+
+        for (var i = 0; i < inputList.length; i++) {
+
+            //Get the Cell To find out ColumnIndex
+
+            var row = inputList[i].parentNode.parentNode;
+
+            if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
+
+                if (objRef.checked) {
+
+                    //If the header checkbox is checked
+
+                    //check all checkboxes
+
+                    //and highlight all rows
+
+                    //row.style.backgroundColor = "aqua";
+
+                    inputList[i].checked = true;
+
+                }
+
+                else {
+
+                    //If the header checkbox is checked
+
+                    //uncheck all checkboxes
+
+                    //and change rowcolor back to original
+
+                    //if(row.rowIndex % 2 == 0)
+
+                    //{
+
+                    //   //Alternating Row Color
+
+                    //   //row.style.backgroundColor = "#C2D69B";
+
+                    //}
+
+                    //else
+
+                    //{
+
+                    //   row.style.backgroundColor = "white";
+
+                    //}
+
+                    inputList[i].checked = false;
+
+                }
+
+            }
+
+        }
+
+    }
+
+</script> 
+    <script type = "text/javascript">
+
+        function Check_Click(objRef) {
+
+            //Get the Row based on checkbox
+
+            var row = objRef.parentNode.parentNode;
+
+            //Get the reference of GridView
+
+            var GridView = row.parentNode;
 
 
-</script>--%>
+
+            //Get all input elements in Gridview
+
+            var inputList = GridView.getElementsByTagName("input");
+
+
+
+            for (var i = 0; i < inputList.length; i++) {
+
+                //The First element is the Header Checkbox
+
+                var headerCheckBox = inputList[0];
+
+
+
+                //Based on all or none checkboxes
+
+                //are checked check/uncheck Header Checkbox
+
+                var checked = true;
+
+                if (inputList[i].type == "checkbox" && inputList[i] != headerCheckBox) {
+
+                    if (!inputList[i].checked) {
+
+                        checked = false;
+
+                        break;
+
+                    }
+
+                }
+
+            }
+
+            headerCheckBox.checked = checked;
+        }
+
+</script>
 </asp:Content>

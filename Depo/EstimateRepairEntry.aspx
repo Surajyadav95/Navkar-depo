@@ -157,6 +157,16 @@ AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpt
       <asp:BoundField DataField="In Dwell Days" HeaderText="In Dwell Days" HeaderStyle-CssClass="header-center" ItemStyle-HorizontalAlign="Center"></asp:BoundField>      
 
         <asp:BoundField DataField="Approved Dwell Days" HeaderText="Approved Dwell Days" HeaderStyle-CssClass="header-center" ItemStyle-HorizontalAlign="Center"></asp:BoundField>      
+      
+
+     <asp:TemplateField HeaderText="Remarks" HeaderStyle-CssClass="center-header">
+        <ItemTemplate>
+ 
+             <asp:textbox ID="lblRemarks" class="form-control"   Width="150px"   runat="server"  text='<%#Eval("Remarks")%>'></asp:textbox>
+          
+        </ItemTemplate>
+        <ItemStyle Width="20px" HorizontalAlign="Center" /> 
+        </asp:TemplateField>
      
 </Columns>
 
@@ -207,13 +217,19 @@ AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpt
     </Triggers>
 
         </asp:UpdatePanel>
-        <div class="col-md-2"></div>
+       
         <div class="col-md-3 col-xs-12">
         <div class="form-group text-label">
         <b  >Repair Date</b>
         <asp:TextBox ID="txtRepairDate" TextMode="DateTimeLocal" style="text-transform:uppercase" runat="server"  Class="form-control text-label"></asp:TextBox>
         </div>
         </div>
+        <div class="col-md-3 col-xs-12"  runat="server"   >
+<div class="form-group text-label">
+<b>Repaire Remarks</b>
+<asp:TextBox runat="server"  ID="txtApprovedRemarks" CssClass="form-control" Style="text-transform: uppercase;" ></asp:TextBox>
+</div>
+</div>
         <div class="col-md-2 col-xs-12 ">
                                 <div class="form-group" style="padding-top: 20px">
                                     <asp:Button ID="btnMultipleRepair" runat="server"

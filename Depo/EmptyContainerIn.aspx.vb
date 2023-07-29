@@ -924,24 +924,27 @@ Partial Class Summary_BCYMovement
     Protected Sub txtcontainerNo_TextChanged(sender As Object, e As EventArgs)
         Try
             If Not Trim(txtcontainerNo.Text & "") = "" Then
+                If (ddlshipline.SelectedValue <> "371") Then
+                    If Len(Trim(txtcontainerNo.Text)) < 11 Then
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Container lenght is less than 11 cannot proceed for further.');", True)
+                        txtcontainerNo.Text = ""
+                        txtcontainerNo.Focus()
+                    End If
 
-                If Len(Trim(txtcontainerNo.Text)) < 11 Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Container lenght is less than 11 cannot proceed for further.');", True)
-                    txtcontainerNo.Text = ""
-                    txtcontainerNo.Focus()
-                End If
+                    'lblPrintQue.Text = "Please enter correct container no"
 
-                'lblPrintQue.Text = "Please enter correct container no"
-                strSql = ""
-                strSql += "USP_CHECK_CONTAINER_DIGIT '" & Trim(txtcontainerNo.Text & "") & "'"
-                dt = db.sub_GetDatatable(strSql)
-                If Trim(dt.Rows(0)(0)) = "false" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please enter correct container no! ');", True)
-                    txtcontainerNo.Text = ""
-                    txtcontainerNo.Focus()
-                    Exit Sub
-                Else
-                    ddlSize.Focus()
+
+                    strSql = ""
+                    strSql += "USP_CHECK_CONTAINER_DIGIT '" & Trim(txtcontainerNo.Text & "") & "'"
+                    dt = db.sub_GetDatatable(strSql)
+                    If Trim(dt.Rows(0)(0)) = "false" Then
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please enter correct container no! ');", True)
+                        txtcontainerNo.Text = ""
+                        txtcontainerNo.Focus()
+                        Exit Sub
+                    Else
+                        ddlSize.Focus()
+                    End If
                 End If
                 strSql = ""
                 strSql += "US_Check_HoldContainer '" & Trim(txtcontainerNo.Text & "") & "'"

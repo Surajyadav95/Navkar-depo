@@ -200,7 +200,7 @@ Partial Class Summary_BCYMovement
         
             strSql = ""
             strSql += "SP_Update_Repaired '" & Convert.ToDateTime(Trim(txtRepairDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & Convert.ToDateTime(Now).ToString("yyyy-MM-dd HH:mm") & "',"
-            strSql += "" & Session("UserId_DepoCFS") & ",'" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text & "") & "','" & EntryID & "'"
+            strSql += "" & Session("UserId_DepoCFS") & ",'" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text & "") & "','" & EntryID & "','" & Trim(CType(row.FindControl("lblRemarks"), TextBox).Text & "") & "','" & Trim(txtApprovedRemarks.Text & "") & "'"
             db.sub_ExecuteNonQuery(strSql)
             btnSave_Click(sender, e)
             lblSession.Text = "Repaired status updated successfully"
@@ -217,13 +217,13 @@ Partial Class Summary_BCYMovement
                 If chkright.Checked = True Then
                     strSql = ""
                     strSql += "SP_Update_Repaired '" & Convert.ToDateTime(Trim(txtRepairDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & Convert.ToDateTime(Now).ToString("yyyy-MM-dd HH:mm") & "',"
-                    strSql += "" & Session("UserId_DepoCFS") & ",'" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text & "") & "'"
+                    strSql += "" & Session("UserId_DepoCFS") & ",'" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text & "") & "','" & Trim(CType(row.FindControl("lblRemarks"), TextBox).Text & "") & "','" & Trim(txtApprovedRemarks.Text & "") & "'"
                     db.sub_ExecuteNonQuery(strSql)
                 End If
             Next
 
             strSql = ""
-            strSql = " Update EYard_stock set RepairedDate ='" & Convert.ToDateTime(Trim(txtRepairDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "' where ContainerNo='" & Trim(txtContainerNo.Text & "") & "'"
+            strSql = " Update EYard_stock set RepairedDate ='" & Convert.ToDateTime(Trim(txtRepairDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "',Repaire_Remarks = '" & Trim(txtApprovedRemarks.Text & "") & "' where ContainerNo='" & Trim(txtContainerNo.Text & "") & "'"
             dt = db.sub_GetDatatable(strSql)
 
             btnSave_Click(sender, e)

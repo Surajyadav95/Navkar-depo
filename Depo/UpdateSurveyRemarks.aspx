@@ -119,6 +119,8 @@ runat="server"></asp:TextBox>
 <asp:ListItem Value="0">--Select--</asp:ListItem>
 <asp:ListItem Value="Cargo Worthy">Cargo Worthy</asp:ListItem>
 <asp:ListItem Value="Non Cargo Worthy">Non Cargo Worthy</asp:ListItem>                         
+<asp:ListItem Value="Sound">Sound</asp:ListItem> 
+<asp:ListItem Value="DMG">DMG</asp:ListItem> 
 </asp:DropDownList> 
 </div>
 </div>
@@ -269,9 +271,9 @@ function ValidationSave() {
             
     var txtcontainerNo = document.getElementById('<%= txtcontainerNo.ClientID%>').value;
     var txtdamageremarkms = document.getElementById('<%= txtdamageremarkms.ClientID%>').value;
- 
+    var containerstatus = document.getElementById('<%= ddlcontainerstatus.ClientID%>').value;
                   
-
+    
 
 var blResult = Boolean;
 blResult = true;
@@ -286,7 +288,10 @@ document.getElementById('<%= txtdamageremarkms.ClientID%>').style.borderColor = 
 blResult = blResult && false;
 }
 
-                
+    if (containerstatus == "" || containerstatus == "0") {
+        document.getElementById('<%= ddlcontainerstatus.ClientID%>').style.borderColor = "red";
+        blResult = blResult && false;
+    }
               
 if (blResult == false) {
 alert('Please fill the required fields!');

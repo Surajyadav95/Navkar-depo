@@ -117,11 +117,12 @@ Partial Class Summary_BCYMovement
             Dim strsql As String
             '------GetEstimationDetailsExport
             strsql = ""
-            strsql += "GetEstimationDetailsExport'" & Convert.ToDateTime(Trim(txtfromDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & Convert.ToDateTime(Trim(txttoDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & Trim(ddlSearchOn.SelectedItem.Text) & "',"
-            If Trim(ddlSearchOn.SelectedItem.Text) = "Shipping Line" Then
-                strsql += "'" & Trim(ddlShipline.SelectedItem.Text) & "'"
-            ElseIf Trim(ddlSearchOn.SelectedItem.Text) = "Container No" Then
+            strsql += "USP_GetRepairSummary'" & Convert.ToDateTime(Trim(txtfromDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & Convert.ToDateTime(Trim(txttoDate.Text & "")).ToString("yyyy-MM-dd HH:mm") & "','" & ddlBasedOn.SelectedValue & "','" & Trim(ddlSearchOn.SelectedItem.Text) & "',"
+
+            If Trim(ddlSearchOn.SelectedItem.Text) = "Container No" Then
                 strsql += "'" & Trim(TxtContainerNo.Text) & "'"
+            ElseIf Trim(ddlSearchOn.SelectedItem.Text) = "Approve Status" Then
+                strsql += "'" & Trim(ddlStatus.SelectedValue) & "'"
             Else
                 strsql += "''"
             End If
@@ -388,27 +389,6 @@ Partial Class Summary_BCYMovement
         End Try
     End Sub
 
-    Protected Sub chkright_OnCheckedChanged(sender As Object, e As EventArgs)        Try
-
-            Dim CHkCount As Integer = 0
-
-            For Each row In grdContainer.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                    For Each row1 In grdContainer.Rows
-                        If CType(row1.findcontrol("chkright"), CheckBox).Checked = False Then
-                            CType(row1.findcontrol("chkright"), CheckBox).Enabled = False
-                        End If
-
-
-                    Next                    CHkCount = CHkCount + 1                End If                If CHkCount = 0 Then                    For Each row1 In grdContainer.Rows
-                        If CType(row1.findcontrol("lblIsWestim"), Label).Text = 0 Then
-                            CType(row1.findcontrol("chkright"), CheckBox).Enabled = True
-                        End If
-
-
-                    Next                    CHkCount = CHkCount + 1
-                End If            Next
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
+  
+   
 End Class

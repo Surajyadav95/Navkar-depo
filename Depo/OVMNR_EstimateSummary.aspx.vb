@@ -26,7 +26,7 @@ Partial Class Summary_BCYMovement
             ddlSearchOn.Text = "All"
             Filldropdown()
             btnShow_Click(sender, e)
-
+            chkright(sender, e)
         End If
 
         'strSql = ""
@@ -39,7 +39,7 @@ Partial Class Summary_BCYMovement
         'End If
 
     End Sub
-  
+
     Public Function Encrypt(clearText As String) As String
         Return ed.Encrypt(clearText)
     End Function
@@ -104,7 +104,7 @@ Partial Class Summary_BCYMovement
         Me.btnShow_Click(sender, e)
 
     End Sub
-    
+
     Protected Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
         Try
             If (Convert.ToDateTime(txtfromDate.Text).ToString("yyyy-MM-dd") > Convert.ToDateTime(txttoDate.Text).ToString("yyyy-MM-dd")) Then
@@ -265,11 +265,11 @@ Partial Class Summary_BCYMovement
         End If
     End Sub
 
-    Protected Sub btnWestim_Click(sender As Object, e As EventArgs) Handles btnWestim.Click        Try            Dim filename As String            Dim dblChkCount As Double = 0            Dim EdiNo As Integer = 0            Dim strSEC As String            For Each row In grdRegistrationSummary.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                    dblChkCount += 1                                  End If            Next            If dblChkCount = 0 Then                ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please select atleast one Container No.');", True)                Exit Sub            End If            Dim Firstline As Integer = 1            Dim LastLine As Integer = dblChkCount            ' For Each row In grdSummary.Rows            For Each row In grdRegistrationSummary.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                                       strSql = ""                    'strSql = "exec USP_GenerateWESTIM_Estimate '" & Trim(("MSC") & "") & "','" & Trim((Firstline) & "") & "','" & Trim(CType(row.FindControl("lblShippingLine"), Label).Text) & "','" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text) & "','" & Trim((LastLine) & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text) & "'"                    strSql = "exec USP_GenerateWESTIM_Estimate '" & Trim(("MSC") & "") & "','" & Trim((Firstline) & "") & "','" & Trim(CType(row.FindControl("lblShippingLine"), Label).Text) & "','" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text) & "','" & Trim((LastLine) & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text) & "'"                    dt3 = db.sub_GetDatatable(strSql)                    Dim EdiNoNew As String                    'If grdRegistrationSummary.Rows.Count = 0 Then                    If Firstline = 1 Then                        EdiNo = Convert.ToString(dt3.Rows(0)("EdiNo"))                        EdiNoNew = EdiNo.ToString()                    End If                    If dt3.Rows.Count > 0 Then                        For i = 0 To dt3.Rows.Count - 1                            'If (dt3.Rows(i)("CONT_DATA").ToString().Contains("UNZ+2+")).ToString() = "UNZ+2+" Then                            If (dt3.Rows(i)("CONT_DATA").ToString().Contains("UNZ+")) Then                                strSEC = strSEC & "UNZ+" & LastLine & "+" & EdiNoNew & "'"   '& vbCrLf                            Else                                strSEC = strSEC & Trim(dt3.Rows(i)("CONT_DATA") & "") & vbCrLf                            End If                        Next                    End If                    Firstline = Firstline + 1                    LastLine = dblChkCount
+    Protected Sub btnWestim_Click(sender As Object, e As EventArgs) Handles btnWestim.Click        Try            Dim filename As String            Dim dblChkCount As Double = 0            Dim EdiNo As Integer = 0            Dim strSEC As String            For Each row In grdRegistrationSummary.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                    dblChkCount += 1                End If            Next            If dblChkCount = 0 Then                ScriptManager.RegisterStartupScript(Me, Me.GetType, "Key", "alert('Please select atleast one Container No.');", True)                Exit Sub            End If            Dim Firstline As Integer = 1            Dim LastLine As Integer = dblChkCount            ' For Each row In grdSummary.Rows            For Each row In grdRegistrationSummary.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                    strSql = ""                    'strSql = "exec USP_GenerateWESTIM_Estimate '" & Trim(("MSC") & "") & "','" & Trim((Firstline) & "") & "','" & Trim(CType(row.FindControl("lblShippingLine"), Label).Text) & "','" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text) & "','" & Trim((LastLine) & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text) & "'"                    strSql = "exec USP_GenerateWESTIM_Estimate '" & Trim(("MSC") & "") & "','" & Trim((Firstline) & "") & "','" & Trim(CType(row.FindControl("lblShippingLine"), Label).Text) & "','" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text) & "','" & Trim((LastLine) & "") & "','" & Trim(CType(row.FindControl("lblEntryID"), Label).Text) & "'"                    dt3 = db.sub_GetDatatable(strSql)                    Dim EdiNoNew As String                    'If grdRegistrationSummary.Rows.Count = 0 Then                    If Firstline = 1 Then                        EdiNo = Convert.ToString(dt3.Rows(0)("EdiNo"))                        EdiNoNew = EdiNo.ToString()                    End If                    If dt3.Rows.Count > 0 Then                        For i = 0 To dt3.Rows.Count - 1                            'If (dt3.Rows(i)("CONT_DATA").ToString().Contains("UNZ+2+")).ToString() = "UNZ+2+" Then                            If (dt3.Rows(i)("CONT_DATA").ToString().Contains("UNZ+")) Then                                strSEC = strSEC & "UNZ+" & LastLine & "+" & EdiNoNew & "'"   '& vbCrLf                            Else                                strSEC = strSEC & Trim(dt3.Rows(i)("CONT_DATA") & "") & vbCrLf                            End If                        Next                    End If                    Firstline = Firstline + 1                    LastLine = dblChkCount
                     strSql = ""
                     strSql += "UPDATE OVMNR_Estimate_M set IsWestim =1 where Containerno ='" & Trim(CType(row.FindControl("lblContainerNo"), Label).Text) & "'"
-                    dt4 = db.sub_GetDatatable(strSql)                    'btnShow_Click(sender, e)                End If            Next            btnShow_Click(sender, e)                      filename = "WESTIM_FILE_" & Convert.ToDateTime(Now).ToString("yyyyMMddHHmmss") & ".EDI"            Dim strfilePath As String = ""            strfilePath = Server.MapPath("~/WestimFiles/")            strfilePath += filename            Dim writeFileXML As System.IO.TextWriter = New StreamWriter(strfilePath)            writeFileXML.WriteLine(strSEC)            writeFileXML.Flush()            writeFileXML.Close()            writeFileXML = Nothing            Response.ContentType = ContentType            Response.AppendHeader("Content-Disposition", ("attachment; filename=" + Path.GetFileName(strfilePath)))            Response.WriteFile(strfilePath)            Response.End()            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "OpenList", "javascript:ShowAlert();", True)            btnShow_Click(sender, e)        Catch ex As Exception            lblError.Text = "Error in procedure: " & Reflection.MethodBase.GetCurrentMethod.Name & ". " & ex.Message.ToString        End Try    End Sub    Protected Sub chkright_OnCheckedChanged(sender As Object, e As EventArgs)        Try
-            
+                    dt4 = db.sub_GetDatatable(strSql)                    'btnShow_Click(sender, e)                End If            Next            btnShow_Click(sender, e)            filename = "WESTIM_FILE_" & Convert.ToDateTime(Now).ToString("yyyyMMddHHmmss") & ".EDI"            Dim strfilePath As String = ""            strfilePath = Server.MapPath("~/WestimFiles/")            strfilePath += filename            Dim writeFileXML As System.IO.TextWriter = New StreamWriter(strfilePath)            writeFileXML.WriteLine(strSEC)            writeFileXML.Flush()            writeFileXML.Close()            writeFileXML = Nothing            Response.ContentType = ContentType            Response.AppendHeader("Content-Disposition", ("attachment; filename=" + Path.GetFileName(strfilePath)))            Response.WriteFile(strfilePath)            Response.End()            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "OpenList", "javascript:ShowAlert();", True)            btnShow_Click(sender, e)        Catch ex As Exception            lblError.Text = "Error in procedure: " & Reflection.MethodBase.GetCurrentMethod.Name & ". " & ex.Message.ToString        End Try    End Sub    Protected Sub chkright_OnCheckedChanged(sender As Object, e As EventArgs)        Try
+
             Dim CHkCount As Integer = 0
 
             For Each row In grdRegistrationSummary.Rows                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then                    For Each row1 In grdRegistrationSummary.Rows
@@ -278,7 +278,7 @@ Partial Class Summary_BCYMovement
                         End If
 
 
-                    Next                    CHkCount = CHkCount + 1                End If                If CHkCount = 0 Then                    For Each row1 In grdRegistrationSummary.Rows
+                    Next                    CHkCount = CHkCount + 1                End If                If CHkCount = 0 Then                    For Each row1 In grdRegistrationSummary.Rows
                         If CType(row1.findcontrol("lblIsWestim"), Label).Text = 0 Then
                             CType(row1.findcontrol("chkright"), CheckBox).Enabled = True
                         End If
@@ -287,6 +287,7 @@ Partial Class Summary_BCYMovement
                     Next                    CHkCount = CHkCount + 1
                 End If            Next
 
+            txtcount.Text = CHkCount
         Catch ex As Exception
 
         End Try
@@ -309,6 +310,29 @@ Partial Class Summary_BCYMovement
                     Next                    CHkCount = CHkCount + 1
                 End If            Next
 
+        Catch ex As Exception
+
+        End Try
+    End Sub    Protected Sub chkright(sender As Object, e As EventArgs)
+
+        Dim CHkCount As Integer = 0        Try
+            For Each row In grdRegistrationSummary.Rows
+
+
+                If CType(row.findcontrol("chkright"), CheckBox).Checked = True Then
+                    For Each row1 In grdRegistrationSummary.Rows
+                        If CType(row1.findcontrol("chkright"), CheckBox).Checked = False Then
+                            'CType(row1.findcontrol("chkright"), CheckBox).Enabled = False
+
+                        End If
+
+                    Next
+                    CHkCount = CHkCount + 1
+                End If
+
+            Next
+
+            txtcount.Text = CHkCount
         Catch ex As Exception
 
         End Try

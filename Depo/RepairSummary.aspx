@@ -133,16 +133,18 @@ Text="Show"     />
 <asp:GridView ID="grdContainer" runat="server" ForeColor="Black" CssClass="table table-striped table-bordered table-hover" 
 AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpty="true">
 <Columns>  
-     <asp:TemplateField HeaderText=" " HeaderStyle-CssClass="center-header">
+
+     <asp:TemplateField  >
+          <HeaderTemplate>
+      <asp:CheckBox ID="checkAll" runat="server"     onclick = "checkAll(this);" />
+    </HeaderTemplate>
 <ItemTemplate>
-<asp:CheckBox ID="chkright" Text=""  runat="server"  AutoPostBack="true" OnCheckedChanged="chkright_OnCheckedChanged"/>
+<asp:CheckBox ID="chkright" Text=""  runat="server" />
 </ItemTemplate>
   <ItemStyle Width="20px" HorizontalAlign="Center" />                                    
 </asp:TemplateField>
    
-
-
-
+     
 
      <asp:TemplateField HeaderText="Repair ID" HeaderStyle-CssClass="header-center" Visible="true">
        
@@ -242,8 +244,8 @@ AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpt
                                 </div>
                             </div>
 
-    <div class="row" style="display:none">
-        <div class="col-md-2 col-xs-12 pull-right">
+    <div class="row"  >
+        <div class="col-md-2 col-xs-12 pull-right" >
                                 <div class="form-group pull-right" style="padding-right: 20px">
                                     <asp:Button ID="btnExport" runat="server"
                                         class="btn btn-warning btn-sm outline" Text="Export To Excel" ></asp:Button>
@@ -252,7 +254,7 @@ AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpt
     
 
       <%--<div class="row">--%>
-         <div class="col-md-2 col-xs-12 pull-right">
+         <div class="col-md-2 col-xs-12 pull-right" style="display:none">
                                 <div class="form-group pull-right" style="padding-left: 20px">
                                     <asp:Button ID="ExportToExcel" runat="server"
                                         class="btn btn-success btn-sm outline" Text="ExportToExcel " ></asp:Button>
@@ -279,6 +281,73 @@ AutoGenerateColumns="False" EmptyDataText="No records found!" ShowHeaderWhenEmpt
 </div>
          
 </div>
+     <script type = "text/javascript">
+
+       function checkAll(objRef) {
+
+           var GridView = objRef.parentNode.parentNode.parentNode;
+
+           var inputList = GridView.getElementsByTagName("input");
+
+           for (var i = 0; i < inputList.length; i++) {
+
+               //Get the Cell To find out ColumnIndex
+
+               var row = inputList[i].parentNode.parentNode;
+
+               if (inputList[i].type == "checkbox" && objRef != inputList[i]) {
+
+                   if (objRef.checked) {
+
+                       //If the header checkbox is checked
+
+                       //check all checkboxes
+
+                       //and highlight all rows
+
+                       //row.style.backgroundColor = "aqua";
+
+                       inputList[i].checked = true;
+
+                   }
+
+                   else {
+
+                       //If the header checkbox is checked
+
+                       //uncheck all checkboxes
+
+                       //and change rowcolor back to original
+
+                       //if(row.rowIndex % 2 == 0)
+
+                       //{
+
+                       //   //Alternating Row Color
+
+                       //   //row.style.backgroundColor = "#C2D69B";
+
+                       //}
+
+                       //else
+
+                       //{
+
+                       //   row.style.backgroundColor = "white";
+
+                       //}
+
+                       inputList[i].checked = false;
+
+                   }
+
+               }
+
+           }
+
+       }
+
+</script> 
 <%-- <script type="text/javascript">
 function checkRadioBtn(id) {
 var gv = document.getElementById('<%=grdcontainer.ClientID%>');
